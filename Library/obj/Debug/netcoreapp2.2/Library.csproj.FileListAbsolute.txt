@@ -7,7 +7,6 @@ C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.TagHelpers.input.cache
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.TagHelpers.output.cache
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.RazorCoreGenerate.cache
-C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Authors\AddStudent.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Authors\Create.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Authors\Delete.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Authors\Details.g.cshtml.cs
@@ -35,3 +34,4 @@ C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\bin\Debug
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\bin\Debug\netcoreapp2.2\Library.Views.pdb
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.Views.pdb
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.csproj.CopyComplete
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Authors\AddBook.g.cshtml.cs

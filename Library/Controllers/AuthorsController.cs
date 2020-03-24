@@ -17,7 +17,7 @@ namespace Library.Controllers
         _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(string searchString)
     {
       return View(_db.Authors.ToList());
     }

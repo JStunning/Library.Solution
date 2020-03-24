@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,10 +18,15 @@ namespace Library.Controllers
         _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(string searchString)
     {
-      List<Book> model = _db.Books.ToList();
-      return View(model);
+      var model = _db.Books.ToList();
+
+      // if (!String.IsNullOrEmpty(searchString))
+      // {
+      //     model = model.Where(m => m.Name.Contains(searchString) || m.Name.Contains(searchString));
+      // }
+      return View(model.ToList());
     }
 
     public ActionResult Create()
