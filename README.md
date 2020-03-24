@@ -1,12 +1,12 @@
 # Library
 
-#### _Library C# app, mm/dd/yyyy_
+#### _Library C# app, 3/24/2020_
 
 #### By _**Jack Dunning**_
 
 ## Description
 
-_Description._
+_App where a libraian can see all books add new ones edit the books authors or titles. App also lets people checkout books with numbers and dates attached to the copy so they know when to bring them back._
 
 ## Setup/Installation Requirements
 
@@ -14,11 +14,14 @@ _Description._
 * _Download .NET script in the Terminal with this command { dotnet tool install -g dotnet-script }_
 * _Download MySQL from here: https://dev.mysql.com/downloads/_
   * _In MySQL_
-    * CREATE DATABASE to_do_list;
-    * USE to_do_list;
-    * CREATE TABLE categories (CategoryId serial PRIMARY KEY, Name LONGTEXT);
-    * CREATE TABLE categoryitem (CategoryItemId serial PRIMARY KEY, ItemId Int, CategoryId INT);
-    * CREATE TABLE items (ItemId serial PRIMARY KEY, Description LONGTEXT);
+    * CREATE DATABASE library;
+    * USE library;
+    * CREATE TABLE books (BookId serial PRIMARY KEY, Name LONGTEXT, PatronId INT);
+    * CREATE TABLE bookauthors (BookAuthorId serial PRIMARY KEY, AuthorId Int, BookId INT);
+    * CREATE TABLE authors (AuthorId serial PRIMARY KEY, AuthorName LONGTEXT, BookId INT);
+    * CREATE TABLE patrons (PatronId serial PRIMARY KEY, PatronName LONGTEXT);
+    * CREATE TABLE checkout (PatronCopyId serial PRIMARY KEY, CopyId Int, PatronId INT);
+    * CREATE TABLE copys (CopyId serial PRIMARY KEY, CopyNumber LONGTEXT, CopyDueDate LONGTEXT);
 * _Git clone Or download the zip file from gihub { https://github.com/JackStunning/HairSalon.Solution }_
 * _In the Terminal run this command { dotnet build }_
 * _In the Terminal run this command { dotnet run }_
@@ -27,7 +30,7 @@ _Description._
 
   * _Spec:_ When user opens localhost:5000.
       * _Input:_ user opens web app
-      * _Output:_ homepage should open "Welcome to the TodoList!" and also give you a link "See TodoList"
+      * _Output:_ homepage should open "Welcome to the Library!" and also give you a link "See Library"
 
 ## Known Bugs
 
