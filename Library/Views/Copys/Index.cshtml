@@ -17,9 +17,9 @@
     <li>
         @Html.ActionLink($"{ copy.CopyNumber }", "Details", new { id = copy.CopyId })
     </li>
-    <p class="copyIndexP">Name: @copy.CopyNumber</p>
+    <p class="copyIndexP">Due Date: @copy.CopyDueDate</p>
 }
 
-<p>@Html.ActionLink("Add new Copy", "Create")</p>
+<p>@Html.ActionLink("Take new Copy", "Create")</p>
 <p>@Html.ActionLink("Back to Patrons", "Index", "Patrons")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

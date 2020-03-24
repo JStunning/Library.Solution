@@ -24,7 +24,7 @@ namespace Library.Controllers
 
     public ActionResult Create()
     {
-        ViewBag.PatronId = new SelectList(_db.Patrons, "PatronId", "Name");
+        ViewBag.PatronId = new SelectList(_db.Patrons, "PatronId", "PatronName");
         return View();
     }
 

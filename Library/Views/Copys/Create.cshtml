@@ -11,9 +11,12 @@
     @Html.LabelFor(model => model.CopyNumber)
     @Html.TextBoxFor(model => model.CopyNumber)<br>
 
+    @Html.LabelFor(model => model.CopyDueDate)
+    @Html.TextBoxFor(model => model.CopyDueDate)<br>
+
     @Html.Label("Select patron")
     @Html.DropDownList("PatronId")<br>
 
-    <input type="submit" value="Add new Copy" />
+    <input type="submit" value="Add new Author" />
 }
-<p>@Html.ActionLink("Show all Copys", "Index")</p>
+<p>@Html.ActionLink("Show all Books", "Index")</p>

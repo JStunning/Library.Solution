@@ -12,6 +12,7 @@ namespace Library.Models
         }
         public int CopyId {get; set;}
         public string CopyNumber {get; set;}
+        public string CopyDueDate {get; set;}
         public  ICollection<Checkout> Patrons { get; }
     }
 }

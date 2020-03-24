@@ -3,14 +3,16 @@ using System;
 using Library.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    partial class LibraryContextModelSnapshot : ModelSnapshot
+    [Migration("20200324213449_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,8 +56,6 @@ namespace Library.Migrations
 
                     b.Property<int>("BookId");
 
-                    b.Property<int?>("CopyId");
-
                     b.Property<int?>("PatronId");
 
                     b.HasKey("BookAuthorId");
@@ -63,8 +63,6 @@ namespace Library.Migrations
                     b.HasIndex("AuthorId");
 
                     b.HasIndex("BookId");
-
-                    b.HasIndex("CopyId");
 
                     b.HasIndex("PatronId");
 
@@ -76,15 +74,11 @@ namespace Library.Migrations
                     b.Property<int>("CheckoutId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("BookId");
-
                     b.Property<int>("CopyId");
 
                     b.Property<int>("PatronId");
 
                     b.HasKey("CheckoutId");
-
-                    b.HasIndex("BookId");
 
                     b.HasIndex("CopyId");
 
@@ -105,6 +99,8 @@ namespace Library.Migrations
                     b.Property<string>("CopyNumber");
 
                     b.HasKey("CopyId");
+
+                    b.HasIndex("BookId");
 
                     b.ToTable("Copys");
                 });
@@ -133,10 +129,6 @@ namespace Library.Migrations
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Library.Models.Copy")
-                        .WithMany("Books")
-                        .HasForeignKey("CopyId");
-
                     b.HasOne("Library.Models.Patron")
                         .WithMany("Books")
                         .HasForeignKey("PatronId");
@@ -144,11 +136,6 @@ namespace Library.Migrations
 
             modelBuilder.Entity("Library.Models.Checkout", b =>
                 {
-                    b.HasOne("Library.Models.Book", "Book")
-                        .WithMany("Copys")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("Library.Models.Copy", "Copy")
                         .WithMany("Patrons")
                         .HasForeignKey("CopyId")
@@ -157,6 +144,14 @@ namespace Library.Migrations
                     b.HasOne("Library.Models.Patron", "Patron")
                         .WithMany()
                         .HasForeignKey("PatronId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Library.Models.Copy", b =>
+                {
+                    b.HasOne("Library.Models.Book")
+                        .WithMany("Copys")
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
