@@ -34,6 +34,32 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Copys",
+                columns: table => new
+                {
+                    CopyId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CopyNumber = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Copys", x => x.CopyId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Patrons",
+                columns: table => new
+                {
+                    PatronId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    PatronName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Patrons", x => x.PatronId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "BookAuthor",
                 columns: table => new
                 {
@@ -59,6 +85,32 @@ namespace Library.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Checkout",
+                columns: table => new
+                {
+                    CheckoutId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CopyId = table.Column<int>(nullable: false),
+                    PatronId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Checkout", x => x.CheckoutId);
+                    table.ForeignKey(
+                        name: "FK_Checkout_Copys_CopyId",
+                        column: x => x.CopyId,
+                        principalTable: "Copys",
+                        principalColumn: "CopyId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Checkout_Patrons_PatronId",
+                        column: x => x.PatronId,
+                        principalTable: "Patrons",
+                        principalColumn: "PatronId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_BookAuthor_AuthorId",
                 table: "BookAuthor",
@@ -68,6 +120,16 @@ namespace Library.Migrations
                 name: "IX_BookAuthor_BookId",
                 table: "BookAuthor",
                 column: "BookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Checkout_CopyId",
+                table: "Checkout",
+                column: "CopyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Checkout_PatronId",
+                table: "Checkout",
+                column: "PatronId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -76,10 +138,19 @@ namespace Library.Migrations
                 name: "BookAuthor");
 
             migrationBuilder.DropTable(
+                name: "Checkout");
+
+            migrationBuilder.DropTable(
                 name: "Authors");
 
             migrationBuilder.DropTable(
                 name: "Books");
+
+            migrationBuilder.DropTable(
+                name: "Copys");
+
+            migrationBuilder.DropTable(
+                name: "Patrons");
         }
     }
 }

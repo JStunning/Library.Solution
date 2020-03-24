@@ -9,13 +9,13 @@ namespace Library.Models
         public Book()
         {
             this.Authors = new HashSet<BookAuthor>();
-            // this.Departments = new List<Department>();
+            // this.Copys = new List<Copy>();
         }
 
         public int BookId { get; set; }
         public string Name { get; set; }
         public virtual ICollection<BookAuthor> Authors { get; set; }
-        // public virtual ICollection<Department> Departments { get; set; }
+        // public virtual ICollection<Copy> Copys { get; set; }
 
         
     }

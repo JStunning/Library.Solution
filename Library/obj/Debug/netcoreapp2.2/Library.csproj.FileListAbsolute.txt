@@ -16,9 +16,6 @@ C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Books\Delete.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Books\Details.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Books\Index.g.cshtml.cs
-C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Create.g.cshtml.cs
-C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Details.g.cshtml.cs
-C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Index.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.RazorTargetAssemblyInfo.cache
@@ -35,3 +32,13 @@ C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\bin\Debug
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.Views.pdb
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Library.csproj.CopyComplete
 C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Authors\AddBook.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Patrons\Create.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Patrons\Delete.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Patrons\Details.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Patrons\Index.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Copys\AddPatron.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Copys\Create.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Copys\Delete.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Copys\Details.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Copys\Edit.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\Library.Solution\Library\obj\Debug\netcoreapp2.2\Razor\Views\Copys\Index.g.cshtml.cs

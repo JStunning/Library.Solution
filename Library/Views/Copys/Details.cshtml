@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Library.Models.Copy
+
+<h2>Copy Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.CopyNumber): @Html.DisplayFor(model => model.CopyNumber)</h3>
+
+@if(@Model.Patrons.Count == 0)
+{
+  <p>This Copy does not belong to any Patrons</p>
+}
+else
+{
+  <h4>Patrons the Copy has written:</h4>
+  <ul>
+  @foreach(var join in Model.Patrons)
+  {
+    <li>@Html.ActionLink($"{ join.Patron.PatronName }", "Details", "Patrons", new { id = join.Patron.PatronId })</li>
+    @using (Html.BeginForm("DeletePatron", "Copys"))
+    {
+      @Html.Hidden("joinId", @join.CheckoutId)
+      <input id="detailsDelete" type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Add a Patron", "AddPatron", new { id = Model.CopyId })</p>
+<p>@Html.ActionLink("Edit Copy", "Edit", new { id = Model.CopyId })</p>
+<p>@Html.ActionLink("Delete Copy", "Delete", new { id = Model.CopyId })</p>

@@ -24,14 +24,14 @@ else
 
   @* <h4>Book Major:</h4>
   <ul>
-  @foreach(var join in Model.Departments)
+  @foreach(var join in Model.Checkouts)
   {
     <li id="mark">@join.Major</li>
   }
   </ul> *@
 }
 
-<p>@Html.ActionLink("Set Major", "Index", "Departments")</p>
+<p>@Html.ActionLink("Checkout Book?", "Index", "Patrons")</p>
 <p>@Html.ActionLink("Back to Books", "Index")</p>
 <p>@Html.ActionLink("Edit Book", "Edit", new { id = Model.BookId })</p>
 <p>@Html.ActionLink("Delete Book", "Delete", new { id = Model.BookId })</p>

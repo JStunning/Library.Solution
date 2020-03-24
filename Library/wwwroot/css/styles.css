@@ -24,16 +24,3 @@ h1, h2 {
 input {
   margin-bottom: 2%;
 }
-
-a {
-  color: darkorchid;
-}
-
-.itemIndexP {
-  margin-bottom: 1%;
-}
-
-#mark:active {
-  color: red;
-  text-decoration: none;
-}

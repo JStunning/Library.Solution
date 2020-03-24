@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Library.Models.Copy
+
+<h2>Edit</h2>
+
+<h4>Edit this task: @Html.DisplayFor(model => model.CopyNumber)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CopyId)
+
+    @Html.LabelFor(model => model.CopyNumber)
+    @Html.EditorFor(model => model.CopyNumber)
+
+    @Html.Label("Select book")
+    @Html.DropDownList("BookId")
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

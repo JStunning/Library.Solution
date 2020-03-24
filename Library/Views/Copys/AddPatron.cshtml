@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Library.Models.Copy
+
+<h2>Add a patron</h2>
+
+<h4>Add a patron to this task: @Html.DisplayFor(model => model.CopyNumber)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CopyId)
+
+    @Html.Label("Select patron")
+    @Html.DropDownList("PatronId")
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

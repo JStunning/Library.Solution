@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20200324165144_Initial")]
+    [Migration("20200324205712_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,6 +60,48 @@ namespace Library.Migrations
                     b.ToTable("BookAuthor");
                 });
 
+            modelBuilder.Entity("Library.Models.Checkout", b =>
+                {
+                    b.Property<int>("CheckoutId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CopyId");
+
+                    b.Property<int>("PatronId");
+
+                    b.HasKey("CheckoutId");
+
+                    b.HasIndex("CopyId");
+
+                    b.HasIndex("PatronId");
+
+                    b.ToTable("Checkout");
+                });
+
+            modelBuilder.Entity("Library.Models.Copy", b =>
+                {
+                    b.Property<int>("CopyId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CopyNumber");
+
+                    b.HasKey("CopyId");
+
+                    b.ToTable("Copys");
+                });
+
+            modelBuilder.Entity("Library.Models.Patron", b =>
+                {
+                    b.Property<int>("PatronId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("PatronName");
+
+                    b.HasKey("PatronId");
+
+                    b.ToTable("Patrons");
+                });
+
             modelBuilder.Entity("Library.Models.BookAuthor", b =>
                 {
                     b.HasOne("Library.Models.Author", "Author")
@@ -70,6 +112,19 @@ namespace Library.Migrations
                     b.HasOne("Library.Models.Book", "Book")
                         .WithMany("Authors")
                         .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Library.Models.Checkout", b =>
+                {
+                    b.HasOne("Library.Models.Copy", "Copy")
+                        .WithMany("Patrons")
+                        .HasForeignKey("CopyId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Library.Models.Patron", "Patron")
+                        .WithMany("Copys")
+                        .HasForeignKey("PatronId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

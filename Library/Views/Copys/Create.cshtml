@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Library.Models.Copy
+
+<h4>Add a new task</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.CopyNumber)
+    @Html.TextBoxFor(model => model.CopyNumber)<br>
+
+    @Html.Label("Select patron")
+    @Html.DropDownList("PatronId")<br>
+
+    <input type="submit" value="Add new Copy" />
+}
+<p>@Html.ActionLink("Show all Copys", "Index")</p>
