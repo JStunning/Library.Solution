@@ -1,0 +1,39 @@
+body {
+  background-image: url("https://gohuskies.com/images/2019/4/5/UW_Campus_TW.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-color: linen;
+  margin-top: 3%;
+  height: 700px;
+  border: 1px solid black; 
+}
+
+li {
+  margin-bottom: 2%;
+}
+
+h1, h2 {
+  text-decoration: underline;
+  color: purple;
+  text-shadow: black 1px 1px;
+}
+
+input {
+  margin-bottom: 2%;
+}
+
+a {
+  color: darkorchid;
+}
+
+.itemIndexP {
+  margin-bottom: 1%;
+}
+
+#mark:active {
+  color: red;
+  text-decoration: none;
+}

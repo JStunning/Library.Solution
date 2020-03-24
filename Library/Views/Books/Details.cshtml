@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Library.Models.Book;
+
+<h2>Book Details</h2>
+<hr />
+<h3>@Html.ActionLink($"{ Model.Name }", "Index", "Authors")</h3>
+
+@if(@Model.Authors.Count == 0)
+{
+  <p>This book does not have any authors. Who wrote it?</p>
+}
+else
+{
+  <h4>Authors the book contains:</h4>
+  <ul>
+  @foreach(var join in Model.Authors)
+  {
+    <li id="mark">@join.Author.AuthorName</li>
+  }
+  </ul>
+
+  <h4>Book Major:</h4>
+  <ul>
+  @foreach(var join in Model.Departments)
+  {
+    <li id="mark">@join.Major</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Set Major", "Index", "Departments")</p>
+<p>@Html.ActionLink("Back to Books", "Index")</p>
+<p>@Html.ActionLink("Edit Book", "Edit", new { id = Model.BookId })</p>
+<p>@Html.ActionLink("Delete Book", "Delete", new { id = Model.BookId })</p>
