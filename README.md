@@ -22,7 +22,7 @@ _App where a libraian can see all books add new ones edit the books authors or t
     * CREATE TABLE patrons (PatronId serial PRIMARY KEY, PatronName LONGTEXT);
     * CREATE TABLE checkout (PatronCopyId serial PRIMARY KEY, CopyId Int, PatronId INT);
     * CREATE TABLE copys (CopyId serial PRIMARY KEY, CopyNumber LONGTEXT, CopyDueDate LONGTEXT);
-* _Git clone Or download the zip file from gihub { https://github.com/JackStunning/HairSalon.Solution }_
+* _Git clone Or download the zip file from gihub { https://github.com/JackStunning/Library.Solution }_
 * _In the Terminal run this command { dotnet build }_
 * _In the Terminal run this command { dotnet run }_
 
