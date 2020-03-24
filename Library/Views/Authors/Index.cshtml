@@ -18,7 +18,6 @@
         @Html.ActionLink($"{ author.AuthorName }", "Details", new { id = author.AuthorId })
     </li>
     <p class="authorIndexP">Name: @author.AuthorName</p>
-    <p class="authorIndexP">Number: @author.AuthorNumber</p>
 }
 
 <p>@Html.ActionLink("Add new Author", "Create")</p>

@@ -22,13 +22,13 @@ else
   }
   </ul>
 
-  <h4>Book Major:</h4>
+  @* <h4>Book Major:</h4>
   <ul>
   @foreach(var join in Model.Departments)
   {
     <li id="mark">@join.Major</li>
   }
-  </ul>
+  </ul> *@
 }
 
 <p>@Html.ActionLink("Set Major", "Index", "Departments")</p>
