@@ -34,7 +34,7 @@ _App where a libraian can see all books add new ones edit the books authors or t
 
 ## Known Bugs
 
-_No none bugs_
+_Copy and Patrons detail pages don't have the correct titles for books_
 
 ## Support and contact details
  
