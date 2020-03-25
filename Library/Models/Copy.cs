@@ -11,6 +11,7 @@ namespace Library.Models
             this.Patrons = new HashSet<Checkout>();
         }
         public int CopyId {get; set;}
+        public int BookId {get; set;}
         public string CopyNumber {get; set;}
         public string CopyDueDate {get; set;}
         public  ICollection<Checkout> Patrons { get; }

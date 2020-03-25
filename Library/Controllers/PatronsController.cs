@@ -45,9 +45,9 @@ namespace Library.Controllers
     public ActionResult Details(int id)
     {
         var thisPatron = _db.Patrons
-            .Include(patron => patron.Copys)
+            .Include(book => book.Copys)
             .ThenInclude(join => join.Copy)
-            .FirstOrDefault(patron => patron.PatronId == id);
+            .FirstOrDefault(book => book.PatronId == id);
         return View(thisPatron);
     }
 

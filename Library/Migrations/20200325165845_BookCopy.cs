@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Library.Migrations
 {
-    public partial class Initial : Migration
+    public partial class BookCopy : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,6 +36,21 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Copys",
+                columns: table => new
+                {
+                    CopyId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    BookId = table.Column<int>(nullable: false),
+                    CopyNumber = table.Column<string>(nullable: true),
+                    CopyDueDate = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Copys", x => x.CopyId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Patrons",
                 columns: table => new
                 {
@@ -49,35 +64,13 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Copys",
-                columns: table => new
-                {
-                    CopyId = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CopyNumber = table.Column<string>(nullable: true),
-                    CopyDueDate = table.Column<string>(nullable: true),
-                    BookId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Copys", x => x.CopyId);
-                    table.ForeignKey(
-                        name: "FK_Copys_Books_BookId",
-                        column: x => x.BookId,
-                        principalTable: "Books",
-                        principalColumn: "BookId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "BookAuthor",
                 columns: table => new
                 {
                     BookAuthorId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     AuthorId = table.Column<int>(nullable: false),
-                    BookId = table.Column<int>(nullable: false),
-                    PatronId = table.Column<int>(nullable: true)
+                    BookId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -94,12 +87,6 @@ namespace Library.Migrations
                         principalTable: "Books",
                         principalColumn: "BookId",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_BookAuthor_Patrons_PatronId",
-                        column: x => x.PatronId,
-                        principalTable: "Patrons",
-                        principalColumn: "PatronId",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -139,11 +126,6 @@ namespace Library.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookAuthor_PatronId",
-                table: "BookAuthor",
-                column: "PatronId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Checkout_CopyId",
                 table: "Checkout",
                 column: "CopyId");
@@ -152,11 +134,6 @@ namespace Library.Migrations
                 name: "IX_Checkout_PatronId",
                 table: "Checkout",
                 column: "PatronId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Copys_BookId",
-                table: "Copys",
-                column: "BookId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -171,13 +148,13 @@ namespace Library.Migrations
                 name: "Authors");
 
             migrationBuilder.DropTable(
+                name: "Books");
+
+            migrationBuilder.DropTable(
                 name: "Copys");
 
             migrationBuilder.DropTable(
                 name: "Patrons");
-
-            migrationBuilder.DropTable(
-                name: "Books");
         }
     }
 }

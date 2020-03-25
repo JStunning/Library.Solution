@@ -25,11 +25,12 @@ namespace Library.Controllers
     public ActionResult Create()
     {
         ViewBag.PatronId = new SelectList(_db.Patrons, "PatronId", "PatronName");
+        ViewBag.BookId = new SelectList(_db.Books, "BookId", "Name");
         return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Copy copy, int PatronId)
+    public ActionResult Create(Copy copy, int PatronId, int BookId)
     {
         _db.Copys.Add(copy);
         if (PatronId != 0)

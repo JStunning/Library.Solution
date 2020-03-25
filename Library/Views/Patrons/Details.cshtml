@@ -14,27 +14,20 @@
 }
 else
 {
-  <h4>Copies the checked out:</h4>
+  <h4>Copies they checked out:</h4>
   <ul>
   @foreach(var join in Model.Copys)
   {
     <li id="mark">
-      <p>@join.Copy.CopyNumber</p>
-      <p>@join.Copy.CopyDueDate</p>
+      <p>Copy Number: @join.Copy.CopyNumber</p>
+      <p>Due Date: @join.Copy.CopyDueDate</p>
     </li>
   }
   </ul>
 
-  @* <h4>Patron Major:</h4>
-  <ul>
-  @foreach(var join in Model.Checkouts)
-  {
-    <li id="mark">@join.Major</li>
-  }
-  </ul> *@
 }
 
-<p>@Html.ActionLink("Checkout Book", "Index", "Copys")</p>
+<p>@Html.ActionLink("Add Book to list", "Index", "Copys")</p>
 <p>@Html.ActionLink("Back to Patrons", "Index")</p>
 <p>@Html.ActionLink("Edit Patron", "Edit", new { id = Model.PatronId })</p>
 <p>@Html.ActionLink("Delete Patron", "Delete", new { id = Model.PatronId })</p>
