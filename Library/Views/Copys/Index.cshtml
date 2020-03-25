@@ -9,18 +9,19 @@
 
 @if (Model.Count == 0)
 {
-    <h3>No Copys have been added yet!</h3>
+    <h3>No Copys have been taken yet!</h3>
 }
+
 
 @foreach (Copy copy in Model)
 {
-    <li>
-        @Html.ActionLink($"{ copy.CopyNumber }", "Details", new { id = copy.CopyId })
-    </li>
-    //Need Book Name actionlink here that links back to the book that's clicked
-    //@Html.ActionLink($"{ copy.Books.Book.Name }", "Details", new { id = copy.BookId })
-    
+
+    <li id="mark">@Html.ActionLink($"{ copy.BookId }", "Details", "Books", new { id = copy.BookId })</li>
+    <p>Copy: @Html.ActionLink($"{ copy.CopyNumber }", "Details", "Copys", new { id = copy.CopyId })</p>
     <p class="copyIndexP">Due Date: @copy.CopyDueDate</p>
+            
+    //Need Book Name actionlink here that links back to the book that's clicked
+    
 }
 
 <p>@Html.ActionLink("Take new Copy", "Create")</p>

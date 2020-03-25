@@ -48,6 +48,10 @@ namespace Library.Controllers
             .Include(copy => copy.Patrons)
             .ThenInclude(join => join.Patron)
             .FirstOrDefault(copy => copy.CopyId == id);
+        var thatCopy = _db.Copys
+            .Include(copy => copy.Books)
+            .ThenInclude(join => join.Book)
+            .FirstOrDefault(copy => copy.CopyId == id);
         return View(thisCopy);
     }
 
