@@ -92,7 +92,7 @@ namespace Library.Controllers
     public ActionResult AddPatron(int id)
     {
         var thisCopy = _db.Copys.FirstOrDefault(copys => copys.CopyId == id);
-        ViewBag.PatronId = new SelectList(_db.Patrons, "PatronId", "Name");
+        ViewBag.PatronId = new SelectList(_db.Patrons, "PatronId", "PatronName");
         return View(thisCopy);
     }
 

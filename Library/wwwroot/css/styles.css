@@ -1,11 +1,11 @@
 body {
-  background-image: url("https://gohuskies.com/images/2019/4/5/UW_Campus_TW.jpg");
+  background-image: url("https://natgeo.imgix.net/factsheets/thumbnails/1,200-year-old-Baroque-style-Convent-of-St%20Gall-Switzerland..jpg?auto=compress,format&w=1024&h=560&fit=crop");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .container {
-  background-color: linen;
+  background-color: mistyrose;
   margin-top: 3%;
   height: 700px;
   border: 1px solid black; 
@@ -14,16 +14,21 @@ body {
 
 h1, h2 {
   text-decoration: underline;
-  color: purple;
+  color: royalblue;
   text-shadow: black 1px 1px;
 }
 
 input {
-  margin-bottom: 2%;
+  margin: 2% 0;
 }
 
 p {
   margin-bottom: 2%;
+}
+
+.button {
+  border: 1px solid royalblue;
+  background-color: rgb(220, 235, 250);
 }
 
 #booksIndexLi {

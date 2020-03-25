@@ -18,17 +18,17 @@ else
   <ul>
   @foreach(var join in Model.Copys)
   { 
-    <li id="mark">
-      <p>Title: @Html.ActionLink($"{ join.Copy.Books }", "Details", "Books", new { id = join.Copy.BookId })</p>
+    <li id="mark"> @**@
+      <p>(Should be Book Title): @Html.ActionLink($"{ join.Copy.BookId }", "Details", "Books", new { id = join.Copy.BookId })</p>
       <p>Copy Number: @Html.ActionLink($"{ join.Copy.CopyNumber }", "Index", "Copys")</p>
       <p>Due Date: @join.Copy.CopyDueDate</p>
     </li>
   }
   </ul>
-
+  <hr />
 }
 
-<p>@Html.ActionLink("Add Book to list", "Index", "Copys")</p>
+<p>@Html.ActionLink("Add Book to list", "Create", "Copys")</p>
 <p>@Html.ActionLink("Back to Patrons", "Index")</p>
 <p>@Html.ActionLink("Edit Patron", "Edit", new { id = Model.PatronId })</p>
 <p>@Html.ActionLink("Delete Patron", "Delete", new { id = Model.PatronId })</p>

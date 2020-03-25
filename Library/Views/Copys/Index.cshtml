@@ -15,12 +15,13 @@
 
 @foreach (Copy copy in Model)
 {
+    //Instead of it being the Book Id I want it to be Book Name
+    <li id="mark">(Should be Book Title): @Html.ActionLink($"{ copy.BookId }", "Details", "Books", new { id = copy.BookId })</li>
 
-    <li id="mark">@Html.ActionLink($"{ copy.BookId }", "Details", "Books", new { id = copy.BookId })</li>
     <p>Copy: @Html.ActionLink($"{ copy.CopyNumber }", "Details", "Copys", new { id = copy.CopyId })</p>
     <p class="copyIndexP">Due Date: @copy.CopyDueDate</p>
             
-    //Need Book Name actionlink here that links back to the book that's clicked
+
     
 }
 

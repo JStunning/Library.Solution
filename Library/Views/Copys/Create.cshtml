@@ -4,15 +4,15 @@
 
 @model Library.Models.Copy
 
-<h4>Add a new task</h4>
+<h2>Rent a Book!</h2>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.CopyNumber)
-    @Html.TextBoxFor(model => model.CopyNumber)<br>
+    <h4>Copy Number:
+    @Html.TextBoxFor(model => model.CopyNumber)</h4><br>
 
-    @Html.LabelFor(model => model.CopyDueDate)
-    @Html.TextBoxFor(model => model.CopyDueDate)<br>
+    <h4>Due Date: 
+    @Html.TextBoxFor(model => model.CopyDueDate)</h4><br>
 
     @Html.Label("Select patron")
     @Html.DropDownList("PatronId")<br>
@@ -22,6 +22,6 @@
 
     //Need DropDown List for books
 
-    <input type="submit" value="Add new Author" />
+    <input class="button" type="submit" value="Add new Copy" />
 }
 <p>@Html.ActionLink("Show all Books", "Index")</p>

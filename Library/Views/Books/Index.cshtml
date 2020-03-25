@@ -10,13 +10,13 @@
     <h3>No Books have been added yet!</h3>
 }
 
-@using (Html.BeginForm())
+@* @using (Html.BeginForm())
 {
     <p>
         Find by name: @Html.TextBox("SearchString")  
         <input type="submit" value="Search" />
     </p>
-}
+} *@
 
 @foreach (Book book in Model)
 {
@@ -24,4 +24,5 @@
 }
 
 <p>@Html.ActionLink("Add new Book", "Create")</p>
+<p>@Html.ActionLink("See all Authors", "Index", "Authors")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
