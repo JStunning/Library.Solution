@@ -3,6 +3,7 @@
 }
 
 @model Library.Models.Patron;
+@using static Library.Models.BookCopy;
 
 <h2>Patron Details</h2>
 <hr />
@@ -18,9 +19,9 @@ else
   <ul>
 
   @foreach(var join in Model.Copys)
-  {
+  { 
     <li id="mark">
-      <p>Title: @join.Copy.Books</p>
+      <p>Title:@join.Copy.BookId & @join.Copy.Books</p>
       <p>Copy Number: @join.Copy.CopyNumber</p>
       <p>Due Date: @join.Copy.CopyDueDate</p>
     </li>

@@ -6,7 +6,7 @@
 
 <h2>Book Details</h2>
 <hr />
-<h3>@Html.ActionLink($"{ Model.Name }", "Index", "Authors")</h3>
+<h3>@Model.Name</h3>
 
 @if(@Model.Authors.Count == 0)
 {
@@ -14,11 +14,11 @@
 }
 else
 {
-  <h4>Authors the book contains:</h4>
+  <h4>Authors of the book:</h4>
   <ul>
   @foreach(var join in Model.Authors)
   {
-    <li id="mark">@join.Author.AuthorName</li>
+    <li id="mark">@Html.ActionLink($"{ join.Author.AuthorName }", "Details", "Authors", new { id = join.Author.AuthorId })</li>
   }
   </ul>
 
