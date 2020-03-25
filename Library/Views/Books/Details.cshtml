@@ -22,13 +22,13 @@ else
   }
   </ul>
 
-  @* <h4>Book Major:</h4>
+  <h4>Copys rented:</h4>
   <ul>
-  @foreach(var join in Model.Checkouts)
+  @foreach(var join in Model.Copys)
   {
-    <li id="mark">@join.Major</li>
+    <li id="mark">@join.Copy.CopyNumber</li>
   }
-  </ul> *@
+  </ul>
 }
 
 <p>@Html.ActionLink("Checkout Book?", "Index", "Patrons")</p>

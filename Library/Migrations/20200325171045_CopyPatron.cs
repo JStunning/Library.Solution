@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Library.Migrations
 {
-    public partial class BookCopy : Migration
+    public partial class CopyPatron : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,6 +42,7 @@ namespace Library.Migrations
                     CopyId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     BookId = table.Column<int>(nullable: false),
+                    PatronId = table.Column<int>(nullable: false),
                     CopyNumber = table.Column<string>(nullable: true),
                     CopyDueDate = table.Column<string>(nullable: true)
                 },
@@ -90,6 +91,32 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "BookCopy",
+                columns: table => new
+                {
+                    BookCopyId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CopyId = table.Column<int>(nullable: false),
+                    BookId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BookCopy", x => x.BookCopyId);
+                    table.ForeignKey(
+                        name: "FK_BookCopy_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
+                        principalColumn: "BookId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BookCopy_Copys_CopyId",
+                        column: x => x.CopyId,
+                        principalTable: "Copys",
+                        principalColumn: "CopyId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Checkout",
                 columns: table => new
                 {
@@ -126,6 +153,16 @@ namespace Library.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_BookCopy_BookId",
+                table: "BookCopy",
+                column: "BookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookCopy_CopyId",
+                table: "BookCopy",
+                column: "CopyId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Checkout_CopyId",
                 table: "Checkout",
                 column: "CopyId");
@@ -140,6 +177,9 @@ namespace Library.Migrations
         {
             migrationBuilder.DropTable(
                 name: "BookAuthor");
+
+            migrationBuilder.DropTable(
+                name: "BookCopy");
 
             migrationBuilder.DropTable(
                 name: "Checkout");

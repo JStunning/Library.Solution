@@ -14,8 +14,17 @@
 }
 else
 {
-  <h4>Patrons the Copy has written:</h4>
+  <h4>Copies the Patron has taken:</h4>
   <ul>
+  @foreach(var join in Model.Books)
+  {
+    <li>@Html.ActionLink($"{ join.Book.Name }", "Details", "Books", new { id = join.Book.BookId })</li>
+    @using (Html.BeginForm("DeleteBook", "Copys"))
+    {
+      @Html.Hidden("joinId", @join.BookCopyId)
+      <input id="detailsDelete" type="submit" value="Delete"/>
+    }
+  }
   @foreach(var join in Model.Patrons)
   {
     <li>@Html.ActionLink($"{ join.Patron.PatronName }", "Details", "Patrons", new { id = join.Patron.PatronId })</li>

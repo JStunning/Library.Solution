@@ -36,6 +36,7 @@ namespace Library.Controllers
         if (PatronId != 0)
         {
             _db.Checkout.Add(new Checkout() { PatronId = PatronId, CopyId = copy.CopyId });
+            _db.BookCopy.Add(new BookCopy() { BookId = BookId, CopyId = copy.CopyId });
         }
         _db.SaveChanges();
         return RedirectToAction("Index");

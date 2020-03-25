@@ -12,6 +12,8 @@ namespace Library.Models
     public DbSet<Copy> Copys { get; set; }
     public DbSet<Checkout> Checkout { get; set; }
 
+    public DbSet<BookCopy> BookCopy { get; set; }
+
     public LibraryContext(DbContextOptions options) : base(options) { }
   }
 }

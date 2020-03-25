@@ -17,6 +17,9 @@
     <li>
         @Html.ActionLink($"{ copy.CopyNumber }", "Details", new { id = copy.CopyId })
     </li>
+    //Need Book Name actionlink here that links back to the book that's clicked
+    //@Html.ActionLink($"{ copy.Books.Book.Name }", "Details", new { id = copy.BookId })
+    
     <p class="copyIndexP">Due Date: @copy.CopyDueDate</p>
 }
 
